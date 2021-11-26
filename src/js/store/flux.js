@@ -5,7 +5,8 @@ const getState = ({ getStore, getActions, setStore }) => {
 			people: [],
 			planets: [],
 			vehicles: [],
-			favorites: []
+			favorites: [],
+			information: {}
 		},
 		actions: {
 			getData: async endpoint => {

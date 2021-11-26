@@ -1,6 +1,7 @@
 import React, { useContext, useEffect, useState } from "react";
 import { useParams } from "react-router-dom";
 import Card from "../component/Card.jsx";
+
 import { Context } from "../store/appContext";
 
 const Information = () => {
@@ -23,7 +24,11 @@ const Information = () => {
 		}
 	}, []);
 
-	return <></>;
+	return (
+		<>
+			<Card item={information} />
+		</>
+	);
 };
 
 export default Information;
