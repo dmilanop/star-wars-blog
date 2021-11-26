@@ -1,3 +1,31 @@
-/* 
-    General Styles
-*/
+.logo{
+    width: 90px;
+    margin-left: 8rem;
+}
+.favorites{
+    margin-right: 8rem;
+}
+.button-first{
+    font-size: 20px;
+}
+.button-like{
+   display: flex;
+   justify-content: space-between;
+}
+.card{
+    min-width: 400px;
+    max-width: 400px;
+    margin: 15px;
+}
+.row-card{
+    display: flex;
+    overflow-x: scroll;
+    margin-bottom: 50px;
+}
+.icon-button{
+    display: flex;
+    justify-content: end;
+}
+.trash{
+    font-size: 15px;
+}
