@@ -14,16 +14,14 @@ const getState = ({ getStore, getActions, setStore }) => {
 				try {
 					let response = await fetch(`${store.urlBase}/${endpoint}`);
 					let body = await response.json();
-					console.log(body.results);
+
 					if (response.ok) {
 						setStore({
 							...store,
 							[endpoint]: body.results
 						});
 					}
-				} catch (error) {
-					console.log(error);
-				}
+				} catch (error) {}
 			},
 
 			addFavoritesPeople: (name, endpoint) => {
@@ -61,6 +59,24 @@ const getState = ({ getStore, getActions, setStore }) => {
 				});
 
 				setStore({ ...store, favorites: newFavorites });
+			},
+
+			moreInformation: async (id, endpoint) => {
+				let store = getStore();
+
+				try {
+					let response = await fetch(`${store.urlBase}/${endpoint}/${id}`);
+					let body = await response.json();
+
+					if (response.ok) {
+						setStore({
+							...store,
+							information: body.result.properties
+						});
+					}
+
+					// console.log(body.result.properties);
+				} catch (error) {}
 			}
 		}
 	};
